@@ -1,0 +1,28 @@
+{
+  "name": "exceptioniq",
+  "private": true,
+  "version": "2.0.0",
+  "description": "Governed agentic investigation of finance reconciliation exceptions",
+  "scripts": {
+    "prebuild": "node scripts/check-node.mjs",
+    "build": "npm run build --prefix backend && npm run build --prefix frontend",
+    "demo": "npm run demo --prefix backend",
+    "predev": "node scripts/check-node.mjs",
+    "dev": "concurrently -n api,web -c cyan,green \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
+    "preinstall:all": "node scripts/check-node.mjs",
+    "install:all": "npm install && npm install --prefix backend && npm install --prefix frontend",
+    "mcp": "npm run mcp --prefix backend",
+    "seed": "npm run seed --prefix backend",
+    "prestart": "node scripts/check-node.mjs",
+    "start": "concurrently -n api,web \"npm run start --prefix backend\" \"npm run preview --prefix frontend\"",
+    "pretest": "node scripts/check-node.mjs",
+    "test": "npm test --prefix backend",
+    "typecheck": "npm run typecheck --prefix backend && npm run typecheck --prefix frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  },
+  "engines": {
+    "node": ">=22.13"
+  }
+}

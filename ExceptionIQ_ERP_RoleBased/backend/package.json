@@ -1,0 +1,40 @@
+{
+  "name": "exceptioniq-backend",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "scripts": {
+    "prebuild": "node scripts/check-node.mjs",
+    "build": "next build",
+    "demo": "tsx scripts/demo.ts",
+    "predev": "node scripts/check-node.mjs",
+    "dev": "next dev -p 3001",
+    "mcp": "tsx scripts/mcp-server.ts",
+    "seed": "tsx scripts/seed.ts",
+    "prestart": "node scripts/check-node.mjs",
+    "start": "next start -p 3001",
+    "pretest": "node scripts/check-node.mjs",
+    "test": "vitest run",
+    "test:report": "vitest run --reporter=verbose --reporter=json --outputFile=../docs/test-report.json",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "exceptioniq": "file:..",
+    "next": "^15.5.27",
+    "openai": "^7.30.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "@types/react": "^19.3.0",
+    "tsx": "^4.23.15",
+    "typescript": "~5.9",
+    "vitest": "^5.0.3"
+  },
+  "engines": {
+    "node": ">=22.13"
+  }
+}
